@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import aryan1.jairam2.codemasters.databinding.FragmentWeatherBinding;
 
-public class MaSrv extends Fragment {
+public class WeatherFrag extends Fragment {
 
     private FragmentWeatherBinding binding;
 

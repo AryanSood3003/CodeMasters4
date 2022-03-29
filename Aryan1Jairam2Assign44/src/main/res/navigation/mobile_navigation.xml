@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/nav_weather"
-        android:name="aryan1.jairam2.codemasters.ui.weather.MaSrv"
+        android:name="aryan1.jairam2.codemasters.ui.weather.WeatherFrag"
         android:label="@string/menu_weather"
         tools:layout="@layout/fragment_weather" />
 

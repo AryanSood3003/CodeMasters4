@@ -9,7 +9,7 @@
         android:id="@+id/nav_home"
         android:name="aryan1.jairam2.codemasters.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/home_fragment" />
 
     <fragment
         android:id="@+id/nav_download"
@@ -27,7 +27,7 @@
         android:id="@+id/nav_file"
         android:name="aryan1.jairam2.codemasters.ui.file.FileContentFrag"
         android:label="@string/menu_File"
-        tools:layout="@layout/file_frag" />
+        tools:layout="@layout/file_content_fragment" />
     <fragment
         android:id="@+id/nav_settings"
         android:name="aryan1.jairam2.codemasters.ui.settings.SettingsFrag"

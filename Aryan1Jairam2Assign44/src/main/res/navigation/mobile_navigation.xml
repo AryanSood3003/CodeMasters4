@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="aryan1.jairam2.codemasters.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_download"
+        android:name="aryan1.jairam2.codemasters.ui.download.DownloadFrag"
+        android:label="@string/menu_download"
+        tools:layout="@layout/fragment_download" />
+
+    <fragment
+        android:id="@+id/nav_weather"
+        android:name="aryan1.jairam2.codemasters.ui.weather.MaSrv"
+        android:label="@string/menu_weather"
+        tools:layout="@layout/fragment_weather" />
+
+    <fragment
+        android:id="@+id/nav_file"
+        android:name="aryan1.jairam2.codemasters.ui.file.FileContentFrag"
+        android:label="@string/menu_File"
+        tools:layout="@layout/file_frag" />
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="aryan1.jairam2.codemasters.ui.settings.SettingsFrag"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/settings_frag" />
+    <fragment
+        android:id="@+id/nav_shape"
+        android:name="aryan1.jairam2.codemasters.ui.shape.ShapeFrag"
+        android:label="@string/menu_shape"
+        tools:layout="@layout/shape_fragment" />
+</navigation>

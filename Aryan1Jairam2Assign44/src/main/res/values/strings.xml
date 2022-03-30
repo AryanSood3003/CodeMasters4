@@ -24,5 +24,6 @@
     <string name="rectangle" translatable="false">rectangle</string>
     <string name="display_of_sweepgradient">Display of SweepGradient.</string>
     <string name="please_enter_some_info">Please enter some info..</string>
+    <string name="download_item">Select an item to download</string>
 
 </resources>

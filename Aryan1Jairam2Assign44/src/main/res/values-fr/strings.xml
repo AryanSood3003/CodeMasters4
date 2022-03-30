@@ -24,6 +24,7 @@
     <string name="download_item">Select an item to download</string>
     <string name="email_entry">Please enter an email address</string>
     <string name="database_storage">Database storage</string>
+    <string name="shapeselect">Please Select a shape</string>
 
     <string-array name="emails">
         <item>codemasters@icloud.com</item>

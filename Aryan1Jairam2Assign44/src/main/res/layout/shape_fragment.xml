@@ -22,9 +22,20 @@
         android:layout_width="216dp"
         android:layout_height="42dp"
         android:layout_marginStart="96dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="304dp"
         android:fontFamily="sans-serif-black"
         android:text="@string/email_entry"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="216dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="68dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/shapeselect"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,10 +44,55 @@
         android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="32dp"
         android:text="@string/database_storage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextView" />
+
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="284dp"
+        android:layout_height="181dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="124dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch1">
+
+        <RadioButton
+            android:id="@+id/arch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arch" />
+
+        <RadioButton
+            android:id="@+id/star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Star" />
+
+        <RadioButton
+            android:id="@+id/rrectangle"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:text="Rounded Rectangle" />
+
+        <RadioButton
+            android:id="@+id/oval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oval" />
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/shapes"
+        android:layout_marginStart="153dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

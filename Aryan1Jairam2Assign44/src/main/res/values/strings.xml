@@ -20,4 +20,9 @@
 
     <!-- JK Strings-->
     <string name="jkTest" translatable="false">JK Test 1,2,3.</string>
+    <string name="storeBtnTxt">Store</string>
+    <string name="rectangle" translatable="false">rectangle</string>
+    <string name="display_of_sweepgradient">Display of SweepGradient.</string>
+    <string name="please_enter_some_info">Please enter some info..</string>
+
 </resources>

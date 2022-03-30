@@ -1,14 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    android:background="@color/home_green"
+    tools:context=".ui.home.HomeFrag">
 
     <TextView
-        android:id="@+id/tv1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:id="@+id/jairamTV1"
+        android:layout_width="242dp"
+        android:layout_height="53dp"
+        android:fontFamily="sans-serif-medium"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/jairamTV2"
+        android:layout_width="297dp"
+        android:layout_height="52dp"
+        android:autofillHints="@string/please_enter_some_info"
+        android:fontFamily="sans-serif-medium"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        android:maxLength="10"
+        android:inputType="text"
+        android:hint="@string/please_enter_some_info"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.356" />
+
+    <TextClock
+        android:id="@+id/jairamTC1"
+        android:layout_width="185dp"
+        android:layout_height="49dp"
+        android:fontFamily="sans-serif-medium"
+        android:format12Hour="hh:mm:ss a"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jairamTV1"
+        app:layout_constraintVertical_bias="0.042" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="225dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="360dp"
+        android:text="@string/storeBtnTxt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jairamTV2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:layout_width="239dp"
+        android:layout_height="228dp"
+        android:layout_marginTop="34dp"
+        android:contentDescription="@string/display_of_sweepgradient"
+        android:src="@drawable/sweep_gradient"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.184" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

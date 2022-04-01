@@ -1,10 +1,19 @@
 package aryan1.jairam2.codemasters;
 
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -52,5 +61,51 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.exit);
+        builder.setMessage(R.string.exitmsg)
+                .setCancelable(false)
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        finishAffinity();
+                        System.exit(0);
+                    }
+                })
+                .setIcon(R.drawable.alert)
+                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
+                });
+        builder.show();
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent = null;
+        String helpSite = getString(R.string.url);
+        switch (item.getItemId())
+        {
+            case R.id.action_help:
+                Context context = getApplicationContext();
+                intent = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse(helpSite));
+                startActivity(intent);
+                break;
+            case R.id.action_settings:
+                settings();
+                break;
+
+        }   return super.onOptionsItemSelected(item);
+    }
+
+    private void settings() {
+        startActivityForResult(new Intent(Settings.ACTION_SETTINGS), 0);
+    }
+
+    public void onClick(View view)
+    {
+        settings();
     }
 }

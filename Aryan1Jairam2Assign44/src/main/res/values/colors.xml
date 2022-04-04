@@ -13,4 +13,5 @@
     <color name="dark_red">#610000</color>
     <color name="light_red">#ff7a7a</color>
     <color name="blue">#427BEB</color>
+    <color name="weather">#24D1E7</color>
 </resources>

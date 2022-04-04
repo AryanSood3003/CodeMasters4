@@ -32,6 +32,13 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="url">https://www.apple.com/ca/</string>
+    <string name="name">Name</string>
+    <string name="description">Description</string>
+    <string name="country">Country</string>
+    <string name="humidity">Humidity</string>
+    <string name="longitude">Longitude</string>
+    <string name="latitude">Latitude</string>
+    <string name="city_request">Please Select a City</string>
 
     <string-array name="emails">
         <item>codemasters@icloud.com</item>
@@ -41,6 +48,12 @@
         <item>apple@gmail.com</item>
         <item>marketing@gmail.com</item>
     </string-array>
-
+    <string-array name="cities">
+        <item>Berlin</item>
+        <item>Toronto</item>
+        <item>London</item>
+        <item>Paris</item>
+        <item>Dubai</item>
+    </string-array>
 
 </resources>

@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="Aryan1Jairam2Assign44/src/main/res/drawable/ic_baseline_cloud_24.xml" value="0.1" />
+        <entry key="Aryan1Jairam2Assign44/src/main/res/drawable/ic_menu_camera.xml" value="0.1" />
         <entry key="Aryan1Jairam2Assign44/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1" />
         <entry key="Aryan1Jairam2Assign44/src/main/res/drawable/side_nav_bar.xml" value="0.1" />
         <entry key="Aryan1Jairam2Assign44/src/main/res/drawable/sweep_gradient.xml" value="0.126" />
@@ -11,12 +13,14 @@
         <entry key="Aryan1Jairam2Assign44/src/main/res/layout/file_content_fragment.xml" value="0.11510416666666666" />
         <entry key="Aryan1Jairam2Assign44/src/main/res/layout/fragment_download.xml" value="0.1" />
         <entry key="Aryan1Jairam2Assign44/src/main/res/layout/fragment_home.xml" value="0.1" />
-        <entry key="Aryan1Jairam2Assign44/src/main/res/layout/fragment_weather.xml" value="0.1" />
+        <entry key="Aryan1Jairam2Assign44/src/main/res/layout/fragment_weather.xml" value="0.165" />
         <entry key="Aryan1Jairam2Assign44/src/main/res/layout/home_fragment.xml" value="0.1" />
         <entry key="Aryan1Jairam2Assign44/src/main/res/layout/nav_header_main.xml" value="0.18614130434782608" />
         <entry key="Aryan1Jairam2Assign44/src/main/res/layout/settings_frag.xml" value="0.13880445795339413" />
         <entry key="Aryan1Jairam2Assign44/src/main/res/layout/shape_fragment.xml" value="0.18614130434782608" />
+        <entry key="Aryan1Jairam2Assign44/src/main/res/layout/sm_srv.xml" value="0.24114583333333334" />
         <entry key="Aryan1Jairam2Assign44/src/main/res/menu/activity_main_drawer.xml" value="0.1" />
+        <entry key="Aryan1Jairam2Assign44/src/main/res/menu/custom_menu_layout.xml" value="0.26875" />
         <entry key="Aryan1Jairam2Assign44/src/main/res/menu/main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.2703125" />
       </map>

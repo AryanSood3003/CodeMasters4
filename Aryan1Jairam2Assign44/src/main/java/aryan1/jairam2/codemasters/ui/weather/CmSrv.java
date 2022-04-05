@@ -1,3 +1,5 @@
+//Jairam Kakar - N01179234 - CENG-258-RNC
+//Aryan Sood - N01393003 - CENG-258-RNA
 package aryan1.jairam2.codemasters.ui.weather;
 
 import android.os.AsyncTask;
@@ -39,8 +41,6 @@ public class CmSrv extends Fragment implements AdapterView.OnItemSelectedListene
     String lat,longi,country,humid,name,desc;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        WeatherViewModel weatherViewModel =
-                new ViewModelProvider(this).get(WeatherViewModel.class);
 
         binding = SmSrvBinding.inflate(inflater, container, false);
         View root = binding.getRoot();

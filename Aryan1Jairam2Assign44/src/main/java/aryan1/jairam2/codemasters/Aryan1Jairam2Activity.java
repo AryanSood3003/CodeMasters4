@@ -1,4 +1,9 @@
+//Jairam Kakar - N01179234 - CENG-258-RNC
+//Aryan Sood - N01393003 - CENG-258-RNA
+
 package aryan1.jairam2.codemasters;
+
+
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -11,7 +16,6 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.navigation.NavController;
@@ -23,7 +27,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import aryan1.jairam2.codemasters.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class Aryan1Jairam2Activity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
@@ -64,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(Aryan1Jairam2Activity.this);
         builder.setTitle(R.string.exit);
         builder.setMessage(R.string.exitmsg)
                 .setCancelable(false)

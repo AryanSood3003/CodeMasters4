@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Aryan1Jairam2Assign4">
         <activity
-            android:name=".MainActivity"
+            android:name=".Aryan1Jairam2Activity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Aryan1Jairam2Assign4.NoActionBar">

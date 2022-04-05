@@ -1,13 +1,14 @@
+<!--Jairam Kakar - N01179234 - CENG-258-RNC-->
+<!--Aryan Sood - N01393003 - CENG-258-RNA-->
 <resources>
     <!-- AS Strings -->
-    <string name="app_name">Aryan1Jairam2Assign4</string>
+    <string name="app_name">Code Masters</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
@@ -16,11 +17,6 @@
     <string name="menu_File">File I/O</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_shape">Shape</string>
-
-    <!-- JK Strings-->
-    <string name="storeBtnTxt">Store</string>
-    <string name="display_of_sweepgradient">Display of SweepGradient.</string>
-    <string name="please_enter_some_info">Please enter some info..</string>
     <string name="download_item">Select an item to download</string>
     <string name="email_entry">Please enter an email address</string>
     <string name="database_storage">Database storage</string>
@@ -39,7 +35,6 @@
     <string name="longitude">Longitude</string>
     <string name="latitude">Latitude</string>
     <string name="city_request">Please Select a City</string>
-
     <string-array name="emails">
         <item>codemasters@icloud.com</item>
         <item>testuser@gmail.com</item>
@@ -47,6 +42,7 @@
         <item>alpha@gmail.com</item>
         <item>apple@gmail.com</item>
         <item>marketing@gmail.com</item>
+        <item>abc@gmail.com</item>
     </string-array>
     <string-array name="cities">
         <item>Berlin</item>
@@ -55,5 +51,26 @@
         <item>Paris</item>
         <item>Dubai</item>
     </string-array>
+    <string-array name="lats">
+        <item>52.520008</item>
+        <item>43.777702</item>
+        <item>51.507351</item>
+        <item>48.856613</item>
+        <item>25.2653471</item>
+    </string-array>
+    <string-array name="longs">
+        <item>13.404954</item>
+        <item>-79.233238</item>
+        <item>-0.127758</item>
+        <item>2.352222</item>
+        <item>55.2924914</item>
+    </string-array>
+
+    <!-- JK Strings-->
+    <string name="storeBtnTxt">Store</string>
+    <string name="display_of_sweepgradient">Display of SweepGradient.</string>
+    <string name="please_enter_some_info">Please enter some info..</string>
+    <string name="coming_soon">Coming Soon!!!</string>
+
 
 </resources>

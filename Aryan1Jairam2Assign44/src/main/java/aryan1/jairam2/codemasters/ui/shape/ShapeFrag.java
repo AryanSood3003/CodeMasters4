@@ -1,3 +1,6 @@
+//Jairam Kakar - N01179234 - CENG-258-RNC
+//Aryan Sood - N01393003 - CENG-258-RNA
+
 package aryan1.jairam2.codemasters.ui.shape;
 
 import androidx.lifecycle.ViewModelProvider;
@@ -30,7 +33,6 @@ import aryan1.jairam2.codemasters.R;
 
 public class ShapeFrag extends Fragment {
 
-    private ShapeViewModel mViewModel;
     View root;
     public static ShapeFrag newInstance() {
         return new ShapeFrag();

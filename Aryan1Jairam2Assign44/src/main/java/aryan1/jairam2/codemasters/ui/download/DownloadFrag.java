@@ -10,34 +10,100 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.ProgressBar;
 
 
 import androidx.fragment.app.ListFragment;
+
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 import aryan1.jairam2.codemasters.R;
 import aryan1.jairam2.codemasters.databinding.FragmentDownloadBinding;
 
 public class DownloadFrag extends ListFragment {
-    private FragmentDownloadBinding binding;
+    ImageView imageView= null;
+    ProgressBar progressBar;
+
     String[] list = new String[]
-            {"Flower",
-                    "Nature",
-                    "Mars"};
+            {"Flower", "Nature", "Mars"};
     String[] links = new String[]
-            {"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fflowers%2F&psig=AOvVaw36_u6hxWbu3cys3YeORkcH&ust=1648709375362000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNDRkpef7fYCFQAAAAAdAAAAABAE",
-                    "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fcanada-nature&psig=AOvVaw03WHblcrdURjlghemK22w4&ust=1648709405657000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKDut6Wf7fYCFQAAAAAdAAAAABAD",
-                    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fmars.nasa.gov%2Fscience%2Fsummary%2F&psig=AOvVaw2BSEmlEazs7S57996CpqiJ&ust=1648709421655000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPDA3a2f7fYCFQAAAAAdAAAAABAD"};
+            {"https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?cs=srgb&dl=pexels-pixabay-60597.jpg&fm=jpg",
+                    "https://images.unsplash.com/photo-1610878180933-123728745d22?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80",
+                    "https://aws.cricketmedia.com/media/20151007132801/Mars-Shutterstock-scaled.jpg"};
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fragment_download, container, false);
-        //ArrayAdapter creates a view for each array item
-        // by calling toString() on each item and placing
-        // the contents in a TextView.
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_list_item_1,list);
-        //bind the list view with array adapter
         setListAdapter(adapter);
+        imageView=view.findViewById(R.id.image);
+        progressBar = view.findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.INVISIBLE);
+
         return view;
     }
 
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        getListView().setSelector(android.R.color.holo_blue_bright);
+        AsyncTaskExample asyncTask=new AsyncTaskExample();
+        progressBar.setProgress(0);
+        asyncTask.execute(links[position]);
 
+    }
+
+
+    private class AsyncTaskExample extends AsyncTask<String, String, Bitmap> {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            progressBar.setVisibility(View.VISIBLE);
+        }
+
+
+        @Override
+        protected Bitmap doInBackground(String... strings) {
+            Bitmap bmImg = null;
+            Integer count=0;
+
+       while(count < 4) {
+                try {
+                    Thread.sleep(500);
+                    URL ImageUrl = new URL(strings[0]);
+                    count++;
+                    publishProgress(String.valueOf(count*25));
+                    HttpURLConnection urlConnection = (HttpURLConnection) ImageUrl.openConnection();
+                    int responseCode = urlConnection.getResponseCode();
+                    if (responseCode == HttpURLConnection.HTTP_OK) {
+                        InputStream is = urlConnection.getInputStream();
+                        BitmapFactory.Options options = new BitmapFactory.Options();
+                        options.inPreferredConfig = Bitmap.Config.RGB_565;
+                        bmImg = BitmapFactory.decodeStream(is, null, options);
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            return bmImg;
+        }
+
+
+        @Override
+        protected void onPostExecute(Bitmap bitmap) {
+            super.onPostExecute(bitmap);
+            if (imageView != null) {
+                progressBar.setVisibility(View.INVISIBLE);
+                imageView.setImageBitmap(bitmap);
+            }
+        }
+        @Override
+        protected void onProgressUpdate(String... values) {
+            progressBar.setProgress(Integer.parseInt(values[0]));
+        }
+    }
 }

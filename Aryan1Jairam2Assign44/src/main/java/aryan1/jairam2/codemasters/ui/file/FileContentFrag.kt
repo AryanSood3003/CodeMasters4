@@ -1,16 +1,19 @@
 package aryan1.jairam2.codemasters.ui.file
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.os.Environment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import aryan1.jairam2.codemasters.R
 import aryan1.jairam2.codemasters.databinding.FileContentFragmentBinding
-import aryan1.jairam2.codemasters.databinding.HomeFragmentBinding
-import aryan1.jairam2.codemasters.ui.home.HomeViewModel
+import java.io.File
+import java.io.InputStreamReader
+
 
 class FileContentFrag : Fragment() {
 
@@ -21,9 +24,33 @@ class FileContentFrag : Fragment() {
     ): View {
         binding = FileContentFragmentBinding.inflate(inflater, container, false)
         val root: View = binding!!.root
-        //val textView: TextView = binding!!.
-        //textView.text = getText(R.string.jkTest)
+        val displayBtn : Button = binding!!.jairamAryanDisplayBtn
+        val deleteBtn : Button = binding!!.jairamAryanDeleteBtn
+        val displayTxt : TextView = binding!!.jairamAryanDisplayTV
 
+
+        displayBtn.setOnClickListener {
+            try {
+                val fileInputStream = requireActivity().openFileInput(getText(R.string.jayAryanET).toString())
+                val inputReader = InputStreamReader(fileInputStream)
+                val input = inputReader.readText()
+
+                displayTxt.text = input
+
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+
+        deleteBtn.setOnClickListener(){
+            val file = File(getText(R.string.jayAryanET).toString())
+            val result = file.delete()
+            if (result) {
+                Toast.makeText(activity, "Deleted", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(activity, "Didn't Work", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         return root
     }

@@ -77,4 +77,8 @@
     <string name="addTxtSuc">Added Text Successfully!</string>
     <string name="jkName" translatable="false">Jairam Kakar</string>
     <string name="asName" translatable="false">Aryan Sood</string>
+    <string name="displayFileTitle">Click \'Display\' to display contents of file.</string>
+    <string name="deleteFileTitle">Click \'Delete\' to delete the file.</string>
+    <string name="displayBtnTxt">DISPLAY</string>
+    <string name="deleteBtnTxt">DELETE</string>
 </resources>

@@ -48,7 +48,7 @@ class HomeFrag : Fragment() {
         val file = File(getText(R.string.jayAryanET).toString())
         val editText : EditText = binding!!.jairamET1
         file.appendText(editText.text.toString())
-        Toast.makeText(activity, getText(R.string.addTxtSuc), Toast.LENGTH_SHORT).show()
+        Toast.makeText(activity, getText(R.string.addTxtSuc).toString(), Toast.LENGTH_SHORT).show()
     }
 
     private fun createAndAdd() {

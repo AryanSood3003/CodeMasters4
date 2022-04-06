@@ -21,8 +21,8 @@ class FileContentFrag : Fragment() {
     ): View {
         binding = FileContentFragmentBinding.inflate(inflater, container, false)
         val root: View = binding!!.root
-        val textView: TextView = binding!!.tv2
-        textView.text = getText(R.string.jkTest)
+        //val textView: TextView = binding!!.
+        //textView.text = getText(R.string.jkTest)
 
 
         return root

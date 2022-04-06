@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="aryan1.jairam2.codemasters">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,7 +13,6 @@
         <activity
             android:name=".Aryan1Jairam2Activity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.Aryan1Jairam2Assign4.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

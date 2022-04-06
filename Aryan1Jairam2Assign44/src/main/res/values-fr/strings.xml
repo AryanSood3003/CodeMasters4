@@ -71,6 +71,7 @@
     <string name="display_of_sweepgradient">Display of SweepGradient.</string>
     <string name="please_enter_some_info">Please enter some info..</string>
     <string name="coming_soon">Coming Soon!!!</string>
+    <string name="addTxtSuc">Added Text Successfully!!</string>
 
 
 </resources>

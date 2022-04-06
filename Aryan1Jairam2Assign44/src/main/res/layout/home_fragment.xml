@@ -24,7 +24,7 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <EditText
-        android:id="@+id/jairamTV2"
+        android:id="@+id/jairamET1"
         android:layout_width="297dp"
         android:layout_height="52dp"
         android:autofillHints="@string/please_enter_some_info"
@@ -69,7 +69,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jairamTV2"
+        app:layout_constraintTop_toBottomOf="@+id/jairamET1"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView

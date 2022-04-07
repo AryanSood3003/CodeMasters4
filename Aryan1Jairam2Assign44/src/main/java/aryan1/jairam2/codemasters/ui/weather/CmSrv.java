@@ -37,7 +37,6 @@ public class CmSrv extends Fragment implements AdapterView.OnItemSelectedListene
     Spinner city;
     int selection;
     private TextView latitude,longitude,humidity,count,des,names,userselection;
-    private String mString;
     String lat,longi,country,humid,name,desc;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -50,8 +49,6 @@ public class CmSrv extends Fragment implements AdapterView.OnItemSelectedListene
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         city.setAdapter(adapter);
        city.setOnItemSelectedListener(this);
-//        final TextView textView = binding.textWeather;
-//        weatherViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         latitude=(TextView) root.findViewById(R.id.Lat);
         longitude=(TextView) root.findViewById(R.id.longi);
         humidity=(TextView)root.findViewById(R.id.humid);
@@ -78,16 +75,8 @@ public class CmSrv extends Fragment implements AdapterView.OnItemSelectedListene
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
     }
-    // onClick method of the button
     public void getWeather()
     {
-
-        //get weather information using geo coordinates
-        //this method calls OpenWeatherMap API
-        //
-        //create the URL to call JSON service
-        //"http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=13f04464b7119837cf1dc4fa8b39caa3");
-
         String url = "https://api.openweathermap.org/data/2.5/weather?";
         String [] arr= getResources().getStringArray(R.array.lats);
         String [] arr2= getResources().getStringArray(R.array.longs);
@@ -103,7 +92,7 @@ public class CmSrv extends Fragment implements AdapterView.OnItemSelectedListene
     private class ReadJSONFeedTask extends AsyncTask<String, Void, String> {
 
         protected void onPreExecute(){
-            // anything to display prior to work such as display progressbar!
+           Log.d("Execution","Fetching");
         }
 
         protected String doInBackground(String... urls) {

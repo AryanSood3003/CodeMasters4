@@ -72,12 +72,12 @@ public class DownloadFrag extends ListFragment {
             Bitmap bmImg = null;
             Integer count=0;
 
-       while(count < 4) {
+            while(count < 5) {
                 try {
-                    Thread.sleep(500);
+                    Thread.sleep(1000);
                     URL ImageUrl = new URL(strings[0]);
                     count++;
-                    publishProgress(String.valueOf(count*25));
+                    publishProgress(String.valueOf(count*20));
                     HttpURLConnection urlConnection = (HttpURLConnection) ImageUrl.openConnection();
                     int responseCode = urlConnection.getResponseCode();
                     if (responseCode == HttpURLConnection.HTTP_OK) {

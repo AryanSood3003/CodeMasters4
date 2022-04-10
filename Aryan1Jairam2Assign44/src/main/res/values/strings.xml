@@ -83,8 +83,9 @@
     <string name="deleteBtnTxt">DELETE</string>
     <string name="selectColorTitle">Change Background Color of \'Home\' :</string>
     <string name="red">Red</string>
-    <string name="black">Black</string>
-    <string name="blue">Blue</string>
+    <string name="purple">Purple</string>
+    <string name="yellow">Yellow</string>
     <string name="saveCAPS">SAVE SETTINGS</string>
     <string name="userChoiceKey" translatable="false">userChoiceKey</string>
+    <string name="defaultCAPS">DEFAULT SETTINGS</string>
 </resources>

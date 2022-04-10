@@ -23,39 +23,39 @@
 
     <RadioGroup
         android:id="@+id/jairamAryanColorRG"
-        android:layout_width="402dp"
-        android:layout_height="37dp"
+        android:layout_width="388dp"
+        android:layout_height="45dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.115">
+        app:layout_constraintVertical_bias="0.126">
 
         <RadioButton
             android:id="@+id/jairamAryanRedRB"
             android:layout_width="121dp"
             android:layout_height="match_parent"
-            android:textStyle="bold"
             android:text="@string/red"
-            android:textColor="@color/red" />
+            android:textColor="@color/light_red"
+            android:textStyle="bold" />
 
         <RadioButton
-            android:id="@+id/jairamAryanBlackRB"
+            android:id="@+id/jairamAryanPurpleRB"
             android:layout_width="130dp"
             android:layout_height="match_parent"
-            android:textStyle="bold"
-            android:text="@string/black"
-            android:textColor="@color/black" />
+            android:text="@string/purple"
+            android:textColor="@color/lightPurple"
+            android:textStyle="bold" />
 
         <RadioButton
-            android:id="@+id/jairamAryanBlueRB"
+            android:id="@+id/jairamAryanYellowRB"
             android:layout_width="111dp"
             android:layout_height="match_parent"
-            android:textStyle="bold"
-            android:text="@string/blue"
-            android:textColor="@color/blueBlue" />
+            android:text="@string/yellow"
+            android:textColor="@color/lightYellow"
+            android:textStyle="bold" />
 
     </RadioGroup>
 
@@ -70,5 +70,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.831" />
+
+    <Button
+        android:id="@+id/jairamAryanDefaultSettingsBtn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/defaultCAPS"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.918" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

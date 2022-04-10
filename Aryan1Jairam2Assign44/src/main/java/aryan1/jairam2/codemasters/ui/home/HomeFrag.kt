@@ -37,23 +37,7 @@ class HomeFrag : Fragment() {
         //val textClock : TextClock = binding!!.jairamTC1
         val storeBtn : Button = binding!!.button
 
-        val colorSelection = getString(R.string.userChoiceKey)
-        val sharedPreferences: SharedPreferences = requireActivity().getSharedPreferences(colorSelection,0)
-        val userChoice = sharedPreferences.getInt(colorSelection,0)
-
-        val homeLayout = binding!!.jairamAryanHomeFrag
-
-        if(userChoice == 1){
-            homeLayout.setBackgroundColor(Color.RED)
-        }
-        if(userChoice == 2){
-            homeLayout.setBackgroundColor(Color.BLACK)
-        }
-        if(userChoice == 3){
-            homeLayout.setBackgroundColor(Color.BLUE)
-        }
-
-
+        setHomeBG()
         storeBtn.setOnClickListener(){
             createAndAdd()
             val file = File(getText(R.string.jayAryanET).toString())
@@ -67,6 +51,32 @@ class HomeFrag : Fragment() {
             }
         }
         return root
+    }
+
+    private fun setHomeBG() {
+        val colorSelection = getString(R.string.userChoiceKey)
+        val sharedPreferences: SharedPreferences =
+            requireActivity().getSharedPreferences(colorSelection, 0)
+        val userChoice = sharedPreferences.getInt(colorSelection, 0)
+
+        val homeLayout = binding!!.jairamAryanHomeFrag
+        val homeGreen = Color.rgb(143, 255, 145)
+        val lightRed = Color.rgb(255, 166, 166)
+        val lightPurple = Color.rgb(192, 173, 247)
+        val lightYellow = Color.rgb(247, 243, 151)
+
+        if (userChoice == 0) {
+            homeLayout.setBackgroundColor(homeGreen)
+        }
+        if (userChoice == 1) {
+            homeLayout.setBackgroundColor(lightRed)
+        }
+        if (userChoice == 2) {
+            homeLayout.setBackgroundColor(lightPurple)
+        }
+        if (userChoice == 3) {
+            homeLayout.setBackgroundColor(lightYellow)
+        }
     }
 
     private fun addToExisting(){

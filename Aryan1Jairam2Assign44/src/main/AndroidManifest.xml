@@ -12,14 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Aryan1Jairam2Assign4">
         <activity
-            android:name=".Aryan1Jairam2Activity"
+            android:name=".SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.Aryan1Jairam2Assign4.NoActionBar">
+            android:theme="@style/SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Aryan1Jairam2Activity"
+            android:theme="@style/Theme.Aryan1Jairam2Assign4.NoActionBar">
         </activity>
     </application>
 

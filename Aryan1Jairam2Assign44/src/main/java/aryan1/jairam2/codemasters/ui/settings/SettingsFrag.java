@@ -42,7 +42,6 @@ public class SettingsFrag extends Fragment {
             SharedPreferences pref = getActivity().getSharedPreferences(colorSelection, 0);
             SharedPreferences.Editor editor = pref.edit();
             editor.putInt(colorSelection, userChoice);
-
             editor.apply();
         });
 
@@ -54,8 +53,8 @@ public class SettingsFrag extends Fragment {
             SharedPreferences pref = getActivity().getSharedPreferences(colorSelection, 0);
             SharedPreferences.Editor editor = pref.edit();
             editor.putInt(colorSelection, userChoice);
-
             editor.apply();
+            colorRG.clearCheck();
         });
 
         return view;

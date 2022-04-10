@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,24 +36,24 @@ class HomeFrag : Fragment() {
         val textView: TextView = binding!!.jairamAryanHomeTV1
         val currentDate= LocalDate.now()
         textView.text = currentDate.toString()
-        //val textClock : TextClock = binding!!.jairamTC1
         val storeBtn : Button = binding!!.jairamAryanStoreButton
-
         setHomeBG()
         storeBtn.setOnClickListener(){
-            createAndAdd()
-            val file = File(getText(R.string.jayAryanET).toString())
-            val fExist = file.exists()
             val editText : EditText = binding!!.jairamET1
-            editText.text.clear()
-            if(fExist){
+            val filePath = "/data/data/aryan1.jairam2.codemasters/files/CodeMasters.txt"
+            val file = File(filePath)
+            var fileExists = file.exists()
+            Log.d("addfile", fileExists.toString())
+            if(fileExists){
                 addToExisting()
             }else{
                 createAndAdd()
             }
+            editText.text.clear()
         }
         return root
     }
+
 
     private fun setHomeBG() {
         val colorSelection = getString(R.string.userChoiceKey)
@@ -81,9 +82,10 @@ class HomeFrag : Fragment() {
     }
 
     private fun addToExisting(){
-        val file = File(getText(R.string.jayAryanET).toString())
+        val filePath = "/data/data/aryan1.jairam2.codemasters/files/CodeMasters.txt"
+        val file = File(filePath)
         val editText : EditText = binding!!.jairamET1
-        file.appendText(editText.text.toString())
+        file.appendText(editText.text.toString()+ "\n")
         Toast.makeText(activity, getText(R.string.addTxtSuc).toString(), Toast.LENGTH_SHORT).show()
     }
 
@@ -92,7 +94,7 @@ class HomeFrag : Fragment() {
             val editText : EditText = binding!!.jairamET1
             val fileOutputStream: FileOutputStream = requireActivity().openFileOutput(getText(R.string.jayAryanET).toString(), Context.MODE_PRIVATE)
             val outputWriter = OutputStreamWriter(fileOutputStream)
-            outputWriter.append(editText.text.toString())
+            outputWriter.append(editText.text.toString()+"\n")
             outputWriter.close()
             Toast.makeText(activity, getText(R.string.addTxtSuc), Toast.LENGTH_SHORT).show()
         }

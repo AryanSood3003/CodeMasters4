@@ -4,6 +4,7 @@ package aryan1.jairam2.codemasters.ui.file
 
 import android.os.Bundle
 import android.os.Environment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,49 +13,68 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import aryan1.jairam2.codemasters.R
-import aryan1.jairam2.codemasters.databinding.FileContentFragmentBinding
+import aryan1.jairam2.codemasters.databinding.FileFragBinding
 import java.io.File
+import java.io.FileInputStream
 import java.io.InputStreamReader
+import java.nio.file.Files.exists
 
 
 class FileContentFrag : Fragment() {
 
-    private var binding: FileContentFragmentBinding? = null
+    private var binding: FileFragBinding? = null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        binding = FileContentFragmentBinding.inflate(inflater, container, false)
+        binding = FileFragBinding.inflate(inflater, container, false)
         val root: View = binding!!.root
         val displayBtn : Button = binding!!.jairamAryanDisplayBtn
         val deleteBtn : Button = binding!!.jairamAryanDeleteBtn
-        val displayTxt : TextView = binding!!.jairamAryanDisplayTV
+
 
 
         displayBtn.setOnClickListener {
-            try {
-                val fileInputStream = requireActivity().openFileInput(getText(R.string.jayAryanET).toString())
+            display()
+        }
+
+        deleteBtn.setOnClickListener() {
+            val filePath = "/data/data/aryan1.jairam2.codemasters/files/CodeMasters.txt"
+            val file = File(filePath)
+            val exist = file.exists()
+            file.delete()
+            if (exist) {
+                    Toast.makeText(activity, getString(R.string.deleted), Toast.LENGTH_SHORT).show()
+                display()
+                } else {
+                    Toast.makeText(activity, getString(R.string.nonexisting), Toast.LENGTH_SHORT)
+                        .show()
+                }
+            }
+        return root
+    }
+
+    private fun display() {
+        val displayTxt : TextView = binding!!.jairamAryanDisplayTV
+        try {
+            val filePath = "/data/data/aryan1.jairam2.codemasters/files/CodeMasters.txt"
+            val file = File(filePath)
+            val exist = file.exists()
+            Log.d("input", exist.toString())
+            if(exist) {
+                val fileInputStream = requireActivity().openFileInput("CodeMasters.txt")
                 val inputReader = InputStreamReader(fileInputStream)
                 val input = inputReader.readText()
-
                 displayTxt.text = input
-
-            } catch (e: Exception) {
-                e.printStackTrace()
             }
-        }
-
-        deleteBtn.setOnClickListener(){
-            val file = File(getText(R.string.jayAryanET).toString())
-            val result = file.delete()
-            if (result) {
-                Toast.makeText(activity, "Deleted", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(activity, "Didn't Work", Toast.LENGTH_SHORT).show()
+            else {
+                displayTxt.text = ""
+                Toast.makeText(activity, getString(R.string.nonexisting), Toast.LENGTH_SHORT)
+                    .show()
             }
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
-
-        return root
     }
 
     override fun onDestroyView() {

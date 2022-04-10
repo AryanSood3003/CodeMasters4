@@ -18,7 +18,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_layout);
-        handler.postDelayed(runnable,1250);
+        handler.postDelayed(runnable,2000);
     }
 
     @Override

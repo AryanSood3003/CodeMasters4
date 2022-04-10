@@ -17,13 +17,12 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash_layout);
-        handler.postDelayed(runnable,2000);
+        setContentView(R.layout.splash_layout);// Xml that contains the design
+        handler.postDelayed(runnable,2000);//Splash Screen lasts for 2 seconds
     }
 
     @Override
     public void onResume() {
-
         super.onResume();
     }
 
@@ -34,7 +33,7 @@ public class SplashActivity extends AppCompatActivity {
             Log.d("TAG", "run: ");
             if (!isFinishing()) {
                 Intent intent = new Intent(getApplicationContext(), Aryan1Jairam2Activity.class);
-                startActivity(intent);
+                startActivity(intent);//Moving on to Home Screen of app
                 finish(); //so that splash screen doesn't open on resuming
             }
         }

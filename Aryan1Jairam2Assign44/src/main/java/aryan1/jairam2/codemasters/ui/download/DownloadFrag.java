@@ -32,20 +32,20 @@ public class DownloadFrag extends ListFragment {
     ImageView imageView= null;
     ProgressBar progressBar;
 
-    String[] list = new String[]
+    String[] list = new String[]// array to store the values for the List View
             {"Flower", "Nature", "Mars"};
-    String[] links = new String[]
+    String[] links = new String[] //Links for each of the images
             {"https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?cs=srgb&dl=pexels-pixabay-60597.jpg&fm=jpg",
                     "https://images.unsplash.com/photo-1610878180933-123728745d22?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80",
-                    "https://aws.cricketmedia.com/media/20151007132801/Mars-Shutterstock-scaled.jpg"};
+              "https://aws.cricketmedia.com/media/20151007132801/Mars-Shutterstock-scaled.jpg"};
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fragment_download, container, false);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
-                android.R.layout.simple_list_item_1, list);
+                android.R.layout.simple_list_item_1, list);// setting up list adapter
         setListAdapter(adapter);
-        imageView=view.findViewById(R.id.jairamAryanGradientIV);
-        progressBar = view.findViewById(R.id.jairamAryanProgressBar);
+        imageView=view.findViewById(R.id.jairamAryanGradientIV);// Image view to show downloaded image
+        progressBar = view.findViewById(R.id.jairamAryanProgressBar);//Progress bar to show download progress
         progressBar.setVisibility(View.INVISIBLE);
 
         return view;
@@ -53,10 +53,11 @@ public class DownloadFrag extends ListFragment {
 
     @Override
     public void onListItemClick(@NonNull ListView l, @NonNull View v, int position, long id) {
-        getListView().setSelector(android.R.color.holo_blue_bright);
+        getListView().setSelector(android.R.color.holo_blue_bright);//Highlighting the selected item
         AsyncTaskExample asyncTask=new AsyncTaskExample();
         progressBar.setProgress(0);
-        asyncTask.execute(links[position]);
+        asyncTask.execute(links[position]);// getting the position of the selected item and passing
+      //                                         the link to Async Task to download
 
     }
 
@@ -66,7 +67,7 @@ public class DownloadFrag extends ListFragment {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            progressBar.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.VISIBLE);//Displaying the progressbar
         }
 
 
@@ -77,12 +78,13 @@ public class DownloadFrag extends ListFragment {
 
             while(count < 5) {
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(1000);//Simulated Delay
                     URL ImageUrl = new URL(strings[0]);
                     count++;
-                    publishProgress(String.valueOf(count*20));
+                    publishProgress(String.valueOf(count*20));//Incrementing the progress to update the progressbar
                     HttpURLConnection urlConnection = (HttpURLConnection) ImageUrl.openConnection();
                     int responseCode = urlConnection.getResponseCode();
+                    // getting the image
                     if (responseCode == HttpURLConnection.HTTP_OK) {
                         InputStream is = urlConnection.getInputStream();
                         BitmapFactory.Options options = new BitmapFactory.Options();
@@ -102,12 +104,14 @@ public class DownloadFrag extends ListFragment {
         protected void onPostExecute(Bitmap bitmap) {
             super.onPostExecute(bitmap);
             if (imageView != null) {
+                //Removing the progressbar and displaying the image
                 progressBar.setVisibility(View.INVISIBLE);
                 imageView.setImageBitmap(bitmap);
             }
         }
         @Override
         protected void onProgressUpdate(String... values) {
+            //Updating the progressbar
             progressBar.setProgress(Integer.parseInt(values[0]));
         }
     }

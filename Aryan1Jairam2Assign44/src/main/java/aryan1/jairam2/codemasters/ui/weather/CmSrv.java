@@ -48,8 +48,9 @@ public class CmSrv extends Fragment implements AdapterView.OnItemSelectedListene
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
                 R.array.cities, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        city.setAdapter(adapter);
-       city.setOnItemSelectedListener(this);
+        city.setAdapter(adapter);//Setting the spinner with city values
+       city.setOnItemSelectedListener(this); //Checking if any item is selected
+        //Text Views to display the fetched values
         latitude = root.findViewById(R.id.jairamAryanLatTV);
         longitude = root.findViewById(R.id.jairamAryanLongTV);
         humidity = root.findViewById(R.id.jairamAryanHumidTV);
@@ -68,9 +69,9 @@ public class CmSrv extends Fragment implements AdapterView.OnItemSelectedListene
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        selection= city.getSelectedItemPosition();
+        selection= city.getSelectedItemPosition();//Getting the selected item
         Log.d("city",String.valueOf(selection));
-        getWeather();
+        getWeather();//Invoking the API call
     }
 
     @Override
@@ -78,6 +79,7 @@ public class CmSrv extends Fragment implements AdapterView.OnItemSelectedListene
     }
     public void getWeather()
     {
+        //Generating the URL for the call based on city selected
         String url = "https://api.openweathermap.org/data/2.5/weather?";
         String [] arr= getResources().getStringArray(R.array.lats);
         String [] arr2= getResources().getStringArray(R.array.longs);
@@ -87,7 +89,7 @@ public class CmSrv extends Fragment implements AdapterView.OnItemSelectedListene
         url+="&appid=70dadb116a1e4ab671ed539c507302af"; //from OpenWeatherMap website, get the proper key
         userselection.setText(arr3[selection]);
         Log.d("URL",url);
-        new ReadJSONFeedTask().execute(url);
+        new ReadJSONFeedTask().execute(url);//Passing the URL to fetch data
     }
 
     @SuppressLint("StaticFieldLeak")
@@ -101,6 +103,7 @@ public class CmSrv extends Fragment implements AdapterView.OnItemSelectedListene
             URL url;
             HttpURLConnection httpURLConnection = null;
             StringBuilder bufferReader = null;
+            //Getting data
             try {
                 url = new URL(urls[0]);
                 bufferReader = new StringBuilder();
@@ -124,6 +127,7 @@ public class CmSrv extends Fragment implements AdapterView.OnItemSelectedListene
         }
         protected void onPostExecute(String result) {
             try {
+                //Extracting the relevant info from the retrieved data
                 JSONObject weatherJson = new JSONObject(result);
                 JSONArray dataArray1= weatherJson.getJSONArray("weather");
                 JSONObject area= weatherJson.getJSONObject("sys");
@@ -138,6 +142,7 @@ public class CmSrv extends Fragment implements AdapterView.OnItemSelectedListene
                     humid =weathrObj.getString("humidity");
                     country =area.getString("country");
                     name= weatherJson.getString("name");
+                    //Setting the values in the textViews
                     latitude.setText(lat);
                     longitude.setText(longi);
                     humidity.setText(humid);

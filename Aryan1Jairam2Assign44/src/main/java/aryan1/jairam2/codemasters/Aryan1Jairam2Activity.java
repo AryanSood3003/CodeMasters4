@@ -66,7 +66,7 @@ public class Aryan1Jairam2Activity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
     @Override
-    public void onBackPressed() {
+    public void onBackPressed() {//Ask for Confirmation on back key press
         AlertDialog.Builder builder = new AlertDialog.Builder(Aryan1Jairam2Activity.this);
         builder.setTitle(R.string.exit);
         builder.setMessage(R.string.exitmsg)
@@ -87,13 +87,13 @@ public class Aryan1Jairam2Activity extends AppCompatActivity {
         String helpSite = getString(R.string.url);
         switch (item.getItemId())
         {
-            case R.id.action_help:
+            case R.id.action_help://Help button to refrence website
                 Context context = getApplicationContext();
                 intent = new Intent(Intent.ACTION_VIEW,
                         Uri.parse(helpSite));
                 startActivity(intent);
                 break;
-            case R.id.action_settings:
+            case R.id.action_settings://Settings to opn device settings
                 settings();
                 break;
 

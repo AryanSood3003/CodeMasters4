@@ -31,22 +31,21 @@ class FileContentFrag : Fragment() {
         val root: View = binding!!.root
         val displayBtn : Button = binding!!.jairamAryanDisplayBtn
         val deleteBtn : Button = binding!!.jairamAryanDeleteBtn
-
-
-
-        displayBtn.setOnClickListener {
+        displayBtn.setOnClickListener {//On clicking of Display button
             display()
         }
 
-        deleteBtn.setOnClickListener() {
+        deleteBtn.setOnClickListener() {//On clicking of Delete button
+            val displayTxt : TextView = binding!!.jairamAryanDisplayTV
             val filePath = "/data/data/aryan1.jairam2.codemasters/files/CodeMasters.txt"
             val file = File(filePath)
             val exist = file.exists()
-            file.delete()
-            if (exist) {
+            if (exist) {// If file exists
+                file.delete()//Deleting the file
                     Toast.makeText(activity, getString(R.string.deleted), Toast.LENGTH_SHORT).show()
-                display()
+                displayTxt.text = ""//Clearing the display
                 } else {
+                    //File non existing
                     Toast.makeText(activity, getString(R.string.nonexisting), Toast.LENGTH_SHORT)
                         .show()
                 }
@@ -61,14 +60,14 @@ class FileContentFrag : Fragment() {
             val file = File(filePath)
             val exist = file.exists()
             Log.d("input", exist.toString())
-            if(exist) {
+            if(exist) {//Opening the file Reader if the file is existing
                 val fileInputStream = requireActivity().openFileInput("CodeMasters.txt")
                 val inputReader = InputStreamReader(fileInputStream)
                 val input = inputReader.readText()
-                displayTxt.text = input
+                displayTxt.text = input//Sending the data to the textView
             }
             else {
-                displayTxt.text = ""
+                //If file is non existing
                 Toast.makeText(activity, getString(R.string.nonexisting), Toast.LENGTH_SHORT)
                     .show()
             }

@@ -38,18 +38,18 @@ class HomeFrag : Fragment() {
         textView.text = currentDate.toString()
         val storeBtn : Button = binding!!.jairamAryanStoreButton
         setHomeBG()
-        storeBtn.setOnClickListener(){
+        storeBtn.setOnClickListener(){//Storing the Data
             val editText : EditText = binding!!.jairamET1
             val filePath = "/data/data/aryan1.jairam2.codemasters/files/CodeMasters.txt"
             val file = File(filePath)
             var fileExists = file.exists()
             Log.d("addfile", fileExists.toString())
-            if(fileExists){
-                addToExisting()
+            if(fileExists){//If file exists
+                addToExisting()//Append function
             }else{
-                createAndAdd()
+                createAndAdd()//Creating and appending
             }
-            editText.text.clear()
+            editText.text.clear()//Clearing Edit text
         }
         return root
     }
@@ -85,12 +85,13 @@ class HomeFrag : Fragment() {
         val filePath = "/data/data/aryan1.jairam2.codemasters/files/CodeMasters.txt"
         val file = File(filePath)
         val editText : EditText = binding!!.jairamET1
-        file.appendText(editText.text.toString()+ "\n")
+        file.appendText(editText.text.toString()+ "\n")//Adding the inputted data to the file
         Toast.makeText(activity, getText(R.string.addTxtSuc).toString(), Toast.LENGTH_SHORT).show()
     }
 
     private fun createAndAdd() {
         try {
+            //Creating and writing to the file
             val editText : EditText = binding!!.jairamET1
             val fileOutputStream: FileOutputStream = requireActivity().openFileOutput(getText(R.string.jayAryanET).toString(), Context.MODE_PRIVATE)
             val outputWriter = OutputStreamWriter(fileOutputStream)

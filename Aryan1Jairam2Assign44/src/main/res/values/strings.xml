@@ -81,11 +81,18 @@
     <string name="deleteFileTitle">Click \'Delete\' to delete the file.</string>
     <string name="displayBtnTxt">DISPLAY</string>
     <string name="deleteBtnTxt">DELETE</string>
-    <string name="selectColorTitle">Change Background Color of \'Home\' :</string>
+    <string name="selectColorTitle">Change Background Color of \'HOME\' :</string>
     <string name="red">Red</string>
     <string name="purple">Purple</string>
     <string name="yellow">Yellow</string>
     <string name="saveCAPS">SAVE SETTINGS</string>
     <string name="userChoiceKey" translatable="false">userChoiceKey</string>
     <string name="defaultCAPS">DEFAULT SETTINGS</string>
+    <string name="selectTimeFormatTitle">Change Time Format of \'HOME\' :</string>
+    <string name="arch">Arch</string>
+    <string name="star">Star</string>
+    <string name="roundedRect">Rounded Rectangle</string>
+    <string name="oval">Oval</string>
+    <string name="shapeDescript">A Shape</string>
+    <string name="downDescript">Download File</string>
 </resources>

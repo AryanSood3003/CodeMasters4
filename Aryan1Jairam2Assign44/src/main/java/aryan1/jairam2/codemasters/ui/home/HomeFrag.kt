@@ -11,7 +11,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import aryan1.jairam2.codemasters.R
 import aryan1.jairam2.codemasters.databinding.HomeFragmentBinding
@@ -31,11 +30,11 @@ class HomeFrag : Fragment() {
     ): View {
         binding = HomeFragmentBinding.inflate(inflater, container, false)
         val root: View = binding!!.root
-        val textView: TextView = binding!!.jairamTV1
+        val textView: TextView = binding!!.jairamAryanHomeTV1
         val currentDate= LocalDate.now()
         textView.text = currentDate.toString()
         //val textClock : TextClock = binding!!.jairamTC1
-        val storeBtn : Button = binding!!.button
+        val storeBtn : Button = binding!!.jairamAryanStoreButton
 
         setHomeBG()
         storeBtn.setOnClickListener(){

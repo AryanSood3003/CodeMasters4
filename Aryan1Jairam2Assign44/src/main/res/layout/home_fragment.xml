@@ -9,7 +9,7 @@
     tools:context=".ui.home.HomeFrag">
 
     <TextView
-        android:id="@+id/jairamTV1"
+        android:id="@+id/jairamAryanHomeTV1"
         android:layout_width="242dp"
         android:layout_height="53dp"
         android:fontFamily="sans-serif-medium"
@@ -57,11 +57,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jairamTV1"
+        app:layout_constraintTop_toBottomOf="@+id/jairamAryanHomeTV1"
         app:layout_constraintVertical_bias="0.042" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/jairamAryanStoreButton"
         android:layout_width="225dp"
         android:layout_height="50dp"
         android:layout_marginTop="28dp"
@@ -82,7 +82,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/jairamAryanStoreButton"
         app:layout_constraintVertical_bias="0.184" />
 
 

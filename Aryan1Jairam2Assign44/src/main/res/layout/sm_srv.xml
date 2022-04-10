@@ -8,7 +8,7 @@
     tools:context=".ui.weather.CmSrv">
 
     <TextView
-        android:id="@+id/humid"
+        android:id="@+id/jairamAryanHumidTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/bold"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/country"
+        android:id="@+id/jairamAryanCountryTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/bold"
@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/description"
+        android:id="@+id/jairamAryanDescriptionTV"
         android:layout_width="wrap_content"
         style="@style/bold"
         android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/Lat"
+        android:id="@+id/jairamAryanLatTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/bold"
@@ -48,7 +48,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/cities_spinner"
+        android:id="@+id/jairamAryanCitySpinner"
         android:layout_width="317dp"
         style="@style/bold"
         android:layout_height="40dp"
@@ -58,7 +58,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/jairamAryanSMTV1"
         style="@style/weather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -69,20 +69,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/jairamAryanSMTV2"
         style="@style/weather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="24dp"
         android:text="@string/longitude"
-        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintBottom_toTopOf="@+id/jairamAryanSMTV3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/jairamAryanSMTV1"
         app:layout_constraintVertical_bias="0.316" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/jairamAryanSMTV3"
         style="@style/weather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -90,10 +90,10 @@
         android:layout_marginTop="104dp"
         android:text="@string/humidity"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/jairamAryanSMTV1" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/jairamAryanSMTV4"
         style="@style/weather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -101,10 +101,10 @@
         android:layout_marginTop="28dp"
         android:text="@string/country"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/jairamAryanSMTV3" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/jairamAryanSMTV5"
         style="@style/weather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -112,20 +112,20 @@
         android:layout_marginTop="40dp"
         android:text="@string/description"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/jairamAryanSMTV4" />
 
     <TextView
-        android:id="@+id/longi"
+        android:id="@+id/jairamAryanLongTV"
         style="@style/bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="196dp"
         android:layout_marginTop="328dp"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="@+id/jairamAryanSMTV2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/jairamAryanSMTV6"
         style="@style/weather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -133,10 +133,10 @@
         android:layout_marginTop="32dp"
         android:text="@string/name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/jairamAryanSMTV5" />
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/jairamAryanNameTV"
         style="@style/bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -146,7 +146,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/jairamAryanSMTV7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="120dp"
@@ -162,7 +162,7 @@
         app:layout_constraintVertical_bias="0.933" />
 
     <TextView
-        android:id="@+id/city_selected"
+        android:id="@+id/jairamAryanCitySelectedTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="25sp"
@@ -170,5 +170,5 @@
         android:layout_marginStart="129dp"
         android:layout_marginTop="43dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cities_spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/jairamAryanCitySpinner" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,20 +9,10 @@
     android:orientation="horizontal"
     tools:context=".ui.download.DownloadFrag">
 
-    <ListView
-        android:id="@android:id/list"
-        android:layout_width="450dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="#D32F2F"
-        android:baselineAligned="false"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_conversion_absoluteHeight="320dp"
-        tools:layout_conversion_absoluteWidth="4dp"
-        tools:layout_editor_absoluteX="0dp" />
+
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/jairamAryanTextview1"
         android:layout_width="267dp"
         android:layout_height="86dp"
         style="@style/weather"
@@ -36,7 +26,8 @@
         tools:layout_conversion_absoluteWidth="141dp" />
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/jairamAryanGradientIV"
+        android:contentDescription="@string/downDescript"
         android:layout_width="247dp"
         android:layout_height="190dp"
         android:layout_marginStart="80dp"
@@ -45,7 +36,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/jairamAryanProgressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="229dp"
         android:layout_height="62dp"
@@ -53,5 +44,18 @@
         android:layout_marginTop="334dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="450dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#D32F2F"
+        android:baselineAligned="false"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_conversion_absoluteHeight="320dp"
+        tools:layout_conversion_absoluteWidth="4dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

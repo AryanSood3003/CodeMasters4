@@ -2,6 +2,7 @@
 //Aryan Sood - N01393003 - CENG-258-RNA
 package aryan1.jairam2.codemasters.ui.weather;
 
+import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -43,19 +44,19 @@ public class CmSrv extends Fragment implements AdapterView.OnItemSelectedListene
 
         binding = SmSrvBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        city = (Spinner) root.findViewById(R.id.cities_spinner);
+        city = root.findViewById(R.id.jairamAryanCitySpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
                 R.array.cities, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         city.setAdapter(adapter);
        city.setOnItemSelectedListener(this);
-        latitude=(TextView) root.findViewById(R.id.Lat);
-        longitude=(TextView) root.findViewById(R.id.longi);
-        humidity=(TextView)root.findViewById(R.id.humid);
-        count=(TextView) root.findViewById(R.id.country);
-        des=(TextView) root.findViewById(R.id.description);
-        names=(TextView) root.findViewById(R.id.name);
-        userselection=(TextView) root.findViewById(R.id.city_selected);
+        latitude = root.findViewById(R.id.jairamAryanLatTV);
+        longitude = root.findViewById(R.id.jairamAryanLongTV);
+        humidity = root.findViewById(R.id.jairamAryanHumidTV);
+        count = root.findViewById(R.id.jairamAryanCountryTV);
+        des = root.findViewById(R.id.jairamAryanDescriptionTV);
+        names = root.findViewById(R.id.jairamAryanNameTV);
+        userselection = root.findViewById(R.id.jairamAryanCitySelectedTV);
         return root;
     }
 
@@ -89,6 +90,7 @@ public class CmSrv extends Fragment implements AdapterView.OnItemSelectedListene
         new ReadJSONFeedTask().execute(url);
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class ReadJSONFeedTask extends AsyncTask<String, Void, String> {
 
         protected void onPreExecute(){
@@ -96,7 +98,7 @@ public class CmSrv extends Fragment implements AdapterView.OnItemSelectedListene
         }
 
         protected String doInBackground(String... urls) {
-            URL url = null;
+            URL url;
             HttpURLConnection httpURLConnection = null;
             StringBuilder bufferReader = null;
             try {

@@ -44,34 +44,29 @@ public class ShapeFrag extends Fragment {
        root=inflater.inflate(R.layout.shape_fragment, container, false);
 
         // Get a reference to the AutoCompleteTextView in the layout
-        AutoCompleteTextView textView = (AutoCompleteTextView) root.findViewById(R.id.autoCompleteTextView);
+        AutoCompleteTextView textView = root.findViewById(R.id.jairamAryanAutoCompleteTV);
 // Get the string array
         String[] emails = getResources().getStringArray(R.array.emails);
 // Create the adapter and set it to the AutoCompleteTextView
         ArrayAdapter<String> adapter =
-                new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, emails);
+                new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, emails);
         textView.setAdapter(adapter);
-        RadioGroup radioGroup=(RadioGroup) root.findViewById(R.id.radioGroup);
-       radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-           @Override
-           public void onCheckedChanged(RadioGroup radioGroup, int i) {
-               shapes();
-           }
-       });
+        RadioGroup radioGroup = root.findViewById(R.id.jairamAryanShapeRG);
+       radioGroup.setOnCheckedChangeListener((radioGroup1, i) -> shapes());
 
         return root;
     }
 
     private void setShapeByDrawable(Drawable drawable) {
         //
-        ImageView reusableImageView = (ImageView) root.findViewById(R.id.shapes);
+        ImageView reusableImageView = root.findViewById(R.id.jairamAryanShapesIV);
         reusableImageView.setImageDrawable(drawable);
     }
     private void shapes() {
-        RadioButton oval= (RadioButton) root.findViewById(R.id.oval);
-        RadioButton arch= (RadioButton) root.findViewById(R.id.arch);
-        RadioButton rec= (RadioButton) root.findViewById(R.id.rrectangle);
-        RadioButton star= (RadioButton) root.findViewById(R.id.star);
+        RadioButton oval = root.findViewById(R.id.jairamAryanOvalRB);
+        RadioButton arch = root.findViewById(R.id.jairamAryanArchRB);
+        RadioButton rec = root.findViewById(R.id.jairamAryanRectangleRB);
+        RadioButton star= root.findViewById(R.id.jairamAryanStarRB);
         if(oval.isChecked())
         {
             ShapeDrawable d = new ShapeDrawable(new OvalShape());

@@ -3,8 +3,7 @@
 
 package aryan1.jairam2.codemasters;
 
-
-
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -39,16 +38,16 @@ public class Aryan1Jairam2Activity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        setSupportActionBar(binding.appBarMain.toolbar);
+        setSupportActionBar(binding.jairamAryanAppBarMain.toolbar);
         DrawerLayout drawer = binding.drawerLayout;
-        NavigationView navigationView = binding.navView;
+        NavigationView navigationView = binding.jairamAryanNavView;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_download, R.id.nav_weather,R.id.nav_file,R.id.nav_settings,R.id.nav_shape)
                 .setOpenableLayout(drawer)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        NavController navController = Navigation.findNavController(this, R.id.jairamAryanNav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
@@ -62,7 +61,7 @@ public class Aryan1Jairam2Activity extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        NavController navController = Navigation.findNavController(this, R.id.jairamAryanNav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
@@ -72,22 +71,19 @@ public class Aryan1Jairam2Activity extends AppCompatActivity {
         builder.setTitle(R.string.exit);
         builder.setMessage(R.string.exitmsg)
                 .setCancelable(false)
-                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        finishAffinity();
-                        System.exit(0);
-                    }
+                .setPositiveButton(R.string.yes, (dialog, id) -> {
+                    finishAffinity();
+                    System.exit(0);
                 })
                 .setIcon(R.drawable.alert)
-                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                    }
+                .setNegativeButton(R.string.no, (dialog, id) -> {
                 });
         builder.show();
     }
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent = null;
+        Intent intent;
         String helpSite = getString(R.string.url);
         switch (item.getItemId())
         {

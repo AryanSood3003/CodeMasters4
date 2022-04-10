@@ -82,6 +82,13 @@
     <string name="yellow">Yellow</string>
     <string name="saveCAPS">SAVE SETTING</string>
     <string name="defaultCAPS">DEFAULT SETTINGS</string>
+    <string name="selectTimeFormatTitle">Change Time Format of \'HOME\' :</string>
+    <string name="arch">Arch</string>
+    <string name="star">Star</string>
+    <string name="roundedRect">Rounded Rectangle</string>
+    <string name="oval">Oval</string>
+    <string name="shapeDescript">A Shape</string>
+    <string name="downDescript">Download File</string>
 
 
 </resources>

@@ -9,17 +9,18 @@
     tools:context=".ui.shape.ShapeFrag">
 
     <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextView"
+        android:id="@+id/jairamAryanAutoCompleteTV"
         android:layout_width="227dp"
         android:layout_height="46dp"
         android:layout_marginStart="88dp"
         android:layout_marginTop="136dp"
         android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="LabelFor" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/jairamAryanShapeTV1"
         android:layout_width="216dp"
         android:layout_height="42dp"
         android:layout_marginStart="96dp"
@@ -31,6 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/jairamAryanShapeTV2"
         android:layout_width="216dp"
         android:layout_height="42dp"
         android:layout_marginStart="96dp"
@@ -42,70 +44,72 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/jairamAryanSW1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
         android:layout_marginTop="32dp"
         android:text="@string/database_storage"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/jairamAryanAutoCompleteTV"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/jairamAryanShapeRG"
         android:layout_width="284dp"
         android:layout_height="181dp"
         android:layout_marginStart="76dp"
         android:layout_marginTop="124dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1">
+        app:layout_constraintTop_toBottomOf="@+id/jairamAryanSW1">
 
         <RadioButton
-            android:id="@+id/arch"
+            android:id="@+id/jairamAryanArchRB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Arch" />
+            android:text="@string/arch" />
 
         <RadioButton
-            android:id="@+id/star"
+            android:id="@+id/jairamAryanStarRB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Star" />
+            android:text="@string/star" />
 
         <RadioButton
-            android:id="@+id/rrectangle"
+            android:id="@+id/jairamAryanRectangleRB"
             android:layout_width="wrap_content"
             android:layout_height="34dp"
-            android:text="Rounded Rectangle" />
+            android:text="@string/roundedRect" />
 
         <RadioButton
-            android:id="@+id/oval"
+            android:id="@+id/jairamAryanOvalRB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Oval" />
+            android:text="@string/oval" />
     </RadioGroup>
 
     <ImageView
-        android:id="@+id/shapes"
+        android:id="@+id/jairamAryanShapesIV"
+        android:contentDescription="@string/shapeDescript"
         android:layout_marginStart="153dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="33dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/jairamAryanShapeRG" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/jairamAryanShapeTV3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="176dp"
         android:layout_marginBottom="36dp"
         android:text="@string/coming_soon"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintBottom_toTopOf="@+id/jairamAryanShapeTV1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+        app:layout_constraintTop_toBottomOf="@+id/jairamAryanSW1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

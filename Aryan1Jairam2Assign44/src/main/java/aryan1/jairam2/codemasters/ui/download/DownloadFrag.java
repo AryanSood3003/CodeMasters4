@@ -2,6 +2,7 @@
 //Aryan Sood - N01393003 - CENG-258-RNA
 package aryan1.jairam2.codemasters.ui.download;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -17,6 +18,7 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.ListFragment;
 
 import java.io.InputStream;
@@ -39,18 +41,18 @@ public class DownloadFrag extends ListFragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fragment_download, container, false);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_list_item_1,list);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
+                android.R.layout.simple_list_item_1, list);
         setListAdapter(adapter);
-        imageView=view.findViewById(R.id.image);
-        progressBar = view.findViewById(R.id.progressBar);
+        imageView=view.findViewById(R.id.jairamAryanGradientIV);
+        progressBar = view.findViewById(R.id.jairamAryanProgressBar);
         progressBar.setVisibility(View.INVISIBLE);
 
         return view;
     }
 
     @Override
-    public void onListItemClick(ListView l, View v, int position, long id) {
+    public void onListItemClick(@NonNull ListView l, @NonNull View v, int position, long id) {
         getListView().setSelector(android.R.color.holo_blue_bright);
         AsyncTaskExample asyncTask=new AsyncTaskExample();
         progressBar.setProgress(0);
@@ -59,6 +61,7 @@ public class DownloadFrag extends ListFragment {
     }
 
 
+    @SuppressLint("StaticFieldLeak")
     private class AsyncTaskExample extends AsyncTask<String, String, Bitmap> {
         @Override
         protected void onPreExecute() {
@@ -70,7 +73,7 @@ public class DownloadFrag extends ListFragment {
         @Override
         protected Bitmap doInBackground(String... strings) {
             Bitmap bmImg = null;
-            Integer count=0;
+            int count=0;
 
             while(count < 5) {
                 try {

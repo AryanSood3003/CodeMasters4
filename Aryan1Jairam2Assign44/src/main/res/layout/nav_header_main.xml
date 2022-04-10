@@ -13,7 +13,7 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/jairamAryanNavHeaderIV"
         android:layout_width="wrap_content"
         android:layout_height="72dp"
         android:contentDescription="@string/nav_header_desc"
@@ -21,6 +21,7 @@
         app:srcCompat="@drawable/humber" />
 
     <TextView
+        android:id="@+id/jairamAryanNavHeaderTV1"
         android:layout_width="395dp"
         android:layout_height="41dp"
         android:textSize="15sp"
@@ -29,7 +30,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/jairamAryanNavHeaderTV2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/nav_header_subtitle" />

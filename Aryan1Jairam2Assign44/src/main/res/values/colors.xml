@@ -17,4 +17,8 @@
     <color name="gold">#ffcf0b</color>
     <color name="red">#FF0000</color>
     <color name="blueBlue">#0000FF</color>
+    <color name="settingsBlue">#3795bf</color>
+    <color name="lightPurple">#bbafe8</color>
+    <color name="lightRed">#d97d80</color>
+    <color name="lightYellow">#dcd788</color>
 </resources>

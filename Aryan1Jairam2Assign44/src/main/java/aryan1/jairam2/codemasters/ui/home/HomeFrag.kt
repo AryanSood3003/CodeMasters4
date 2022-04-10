@@ -1,11 +1,19 @@
 package aryan1.jairam2.codemasters.ui.home
 
+import android.annotation.SuppressLint
+import android.content.Context
+import android.content.SharedPreferences
+import android.graphics.Color
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.content.Context
-import android.widget.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import aryan1.jairam2.codemasters.R
 import aryan1.jairam2.codemasters.databinding.HomeFragmentBinding
@@ -14,9 +22,12 @@ import java.io.FileOutputStream
 import java.io.OutputStreamWriter
 import java.time.LocalDate
 
+
 class HomeFrag : Fragment() {
 
     private var binding: HomeFragmentBinding? = null
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?, savedInstanceState: Bundle?
@@ -28,6 +39,9 @@ class HomeFrag : Fragment() {
         textView.text = currentDate.toString()
         //val textClock : TextClock = binding!!.jairamTC1
         val storeBtn : Button = binding!!.button
+
+
+
 
         storeBtn.setOnClickListener(){
             createAndAdd()

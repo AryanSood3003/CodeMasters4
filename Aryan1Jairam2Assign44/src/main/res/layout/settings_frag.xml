@@ -1,13 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/settingsBlue"
     tools:context=".ui.settings.SettingsFrag">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/selectColorTitle"
+        android:textStyle="italic"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.039" />
 
-</FrameLayout>
+    <RadioGroup
+        android:id="@+id/jairamAryanColorRG"
+        android:layout_width="402dp"
+        android:layout_height="37dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.115">
+
+        <RadioButton
+            android:id="@+id/jairamAryanRedRB"
+            android:layout_width="96dp"
+            android:layout_height="match_parent"
+            android:text="@string/red"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/jairamAryanPurpleRB"
+            android:layout_width="118dp"
+            android:layout_height="match_parent"
+            android:text="@string/purple"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/jairamAryanYellowRB"
+            android:layout_width="111dp"
+            android:layout_height="match_parent"
+            android:text="@string/yellow"
+            android:textColor="@color/white" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/jairamAryanSaveSettingsBtn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/saveCAPS"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.871" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

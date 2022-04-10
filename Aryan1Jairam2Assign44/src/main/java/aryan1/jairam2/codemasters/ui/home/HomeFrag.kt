@@ -1,11 +1,9 @@
 package aryan1.jairam2.codemasters.ui.home
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,7 +25,6 @@ class HomeFrag : Fragment() {
 
     private var binding: HomeFragmentBinding? = null
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?, savedInstanceState: Bundle?
@@ -40,7 +37,21 @@ class HomeFrag : Fragment() {
         //val textClock : TextClock = binding!!.jairamTC1
         val storeBtn : Button = binding!!.button
 
+        val colorSelection = getString(R.string.userChoiceKey)
+        val sharedPreferences: SharedPreferences = requireActivity().getSharedPreferences(colorSelection,0)
+        val userChoice = sharedPreferences.getInt(colorSelection,0)
 
+        val homeLayout = binding!!.jairamAryanHomeFrag
+
+        if(userChoice == 1){
+            homeLayout.setBackgroundColor(Color.RED)
+        }
+        if(userChoice == 2){
+            homeLayout.setBackgroundColor(Color.BLACK)
+        }
+        if(userChoice == 3){
+            homeLayout.setBackgroundColor(Color.BLUE)
+        }
 
 
         storeBtn.setOnClickListener(){

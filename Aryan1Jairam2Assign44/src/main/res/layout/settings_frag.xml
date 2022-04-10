@@ -35,24 +35,27 @@
 
         <RadioButton
             android:id="@+id/jairamAryanRedRB"
-            android:layout_width="96dp"
+            android:layout_width="121dp"
             android:layout_height="match_parent"
+            android:textStyle="bold"
             android:text="@string/red"
-            android:textColor="@color/white" />
+            android:textColor="@color/red" />
 
         <RadioButton
-            android:id="@+id/jairamAryanPurpleRB"
-            android:layout_width="118dp"
+            android:id="@+id/jairamAryanBlackRB"
+            android:layout_width="130dp"
             android:layout_height="match_parent"
-            android:text="@string/purple"
-            android:textColor="@color/white" />
+            android:textStyle="bold"
+            android:text="@string/black"
+            android:textColor="@color/black" />
 
         <RadioButton
-            android:id="@+id/jairamAryanYellowRB"
+            android:id="@+id/jairamAryanBlueRB"
             android:layout_width="111dp"
             android:layout_height="match_parent"
-            android:text="@string/yellow"
-            android:textColor="@color/white" />
+            android:textStyle="bold"
+            android:text="@string/blue"
+            android:textColor="@color/blueBlue" />
 
     </RadioGroup>
 
@@ -63,9 +66,9 @@
         android:text="@string/saveCAPS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.871" />
+        app:layout_constraintVertical_bias="0.831" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -43,13 +43,41 @@ public class SettingsFrag extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         view=inflater.inflate(R.layout.settings_frag, container, false);
+        RadioGroup colorRG = view.findViewById(R.id.jairamAryanColorRG);
+        colorRG.setOnCheckedChangeListener((radioGroup, i) -> selectBgColor());
+        Button saveBtn = view.findViewById(R.id.jairamAryanSaveSettingsBtn);
 
+        saveBtn.setOnClickListener(view -> {
+            String colorSelection = getString(R.string.userChoiceKey);
+            SharedPreferences pref = getActivity().getSharedPreferences(colorSelection, 0);
+            SharedPreferences.Editor editor = pref.edit();
+            editor.putInt(colorSelection, userChoice);
 
+            editor.apply();
+        });
 
         return view;
     }
 
+    private int selectBgColor() {
+        RadioButton redRB = getView().findViewById(R.id.jairamAryanRedRB);
+        RadioButton blackRB = getView().findViewById(R.id.jairamAryanBlackRB);
+        RadioButton blueRB = getView().findViewById(R.id.jairamAryanBlueRB);
 
+        if(redRB.isChecked()){
+            userChoice = 1;
+            //Toast.makeText(getActivity(), "Red",Toast.LENGTH_LONG).show();
+        }
+        if(blackRB.isChecked()){
+            userChoice = 2;
+            //Toast.makeText(getActivity(), "Purple",Toast.LENGTH_LONG).show();
+        }
+        if(blueRB.isChecked()){
+            userChoice = 3;
+            //Toast.makeText(getActivity(), "Yellow",Toast.LENGTH_LONG).show();
+        }
+        return userChoice;
+    }
 
 
 }

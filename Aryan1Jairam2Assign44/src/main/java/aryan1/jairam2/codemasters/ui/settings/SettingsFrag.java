@@ -33,48 +33,51 @@ public class SettingsFrag extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         view=inflater.inflate(R.layout.settings_frag, container, false);
-        RadioGroup colorRG = view.findViewById(R.id.jairamAryanColorRG);
-        colorRG.setOnCheckedChangeListener((radioGroup, i) -> selectBgColor());
-        Button saveBtn = view.findViewById(R.id.jairamAryanSaveSettingsBtn);
+        RadioGroup colorRG = view.findViewById(R.id.jairamAryanColorRG); // Holder for RadioGroup reference
+        colorRG.setOnCheckedChangeListener((radioGroup, i) -> selectBgColor()); // If a radio button in RadioGroup is checked, call function
+        Button saveBtn = view.findViewById(R.id.jairamAryanSaveSettingsBtn); // Holder for save button reference
 
+        // When save button is clicked
         saveBtn.setOnClickListener(view -> {
-            String colorSelection = getString(R.string.userChoiceKey);
-            SharedPreferences pref = getActivity().getSharedPreferences(colorSelection, 0);
-            SharedPreferences.Editor editor = pref.edit();
-            editor.putInt(colorSelection, userChoice);
-            editor.apply();
+            String colorSelection = getString(R.string.userChoiceKey); // Holder for key (Text)
+            SharedPreferences pref = getActivity().getSharedPreferences(colorSelection, 0); // Get SharedPref file
+            SharedPreferences.Editor editor = pref.edit(); // Open editor
+            editor.putInt(colorSelection, userChoice); // Input the key and value
+            editor.apply(); // Apply changes and close editor
         });
 
-        Button defaultBtn = view.findViewById(R.id.jairamAryanDefaultSettingsBtn);
+        Button defaultBtn = view.findViewById(R.id.jairamAryanDefaultSettingsBtn); // Holder for default button reference
 
+        // If default button is clicked
         defaultBtn.setOnClickListener(view -> {
-            userChoice = 0;
-            String colorSelection = getString(R.string.userChoiceKey);
-            SharedPreferences pref = getActivity().getSharedPreferences(colorSelection, 0);
-            SharedPreferences.Editor editor = pref.edit();
-            editor.putInt(colorSelection, userChoice);
-            editor.apply();
-            colorRG.clearCheck();
+            userChoice = 0; // Default choice (0)
+            String colorSelection = getString(R.string.userChoiceKey);  // Holder for key (Text)
+            SharedPreferences pref = getActivity().getSharedPreferences(colorSelection, 0); //Get SharedPref file
+            SharedPreferences.Editor editor = pref.edit(); // Open editor
+            editor.putInt(colorSelection, userChoice); // Input the key and value
+            editor.apply(); // Apply changes and close editor
+            colorRG.clearCheck(); // Uncheck all radio buttons
         });
 
         return view;
     }
 
+    // Select background color function
     private int selectBgColor() {
-        RadioButton redRB = getView().findViewById(R.id.jairamAryanRedRB);
-        RadioButton purpleRB = getView().findViewById(R.id.jairamAryanPurpleRB);
-        RadioButton yellowRB = getView().findViewById(R.id.jairamAryanYellowRB);
+        RadioButton redRB = getView().findViewById(R.id.jairamAryanRedRB); // Holder for 'red' radio button reference
+        RadioButton purpleRB = getView().findViewById(R.id.jairamAryanPurpleRB); // Holder for 'purple' radio button reference
+        RadioButton yellowRB = getView().findViewById(R.id.jairamAryanYellowRB); // Holder for 'yellow' radio button reference
 
-        if(redRB.isChecked()){
-            userChoice = 1;
+        if(redRB.isChecked()){ // If 'red' RadioButton is checked
+            userChoice = 1; // User option 1 was selected
         }
-        if(purpleRB.isChecked()){
-            userChoice = 2;
+        if(purpleRB.isChecked()){ // If 'purple' RadioButton is checked
+            userChoice = 2; // User option 2 was selected
         }
-        if(yellowRB.isChecked()){
-            userChoice = 3;
+        if(yellowRB.isChecked()){ // If 'yellow' RadioButton is checked
+            userChoice = 3; // User option 3 was selected
         }
-        return userChoice;
+        return userChoice; // Return option selected by user
     }
 
 

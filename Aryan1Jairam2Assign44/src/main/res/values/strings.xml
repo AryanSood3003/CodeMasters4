@@ -96,5 +96,10 @@
     <string name="shapeDescript">A Shape</string>
     <string name="downDescript">Download File</string>
     <string name="deleted">Deleted</string>
-    <string name="nonexisting">No Contents</string>
+    <string name="nonExisting">No Contents</string>
+    <string name="input" translatable="false">input</string>
+    <string name="txtFile" translatable="false">CodeMasters.txt</string>
+    <string name="filePath" translatable="false">/data/data/aryan1.jairam2.codemasters/files/CodeMasters.txt</string>
+    <string name="addFile" translatable="false">addfile</string>
+
 </resources>
